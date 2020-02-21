@@ -1,1 +1,33 @@
+// Animation stuff
+@keyframes offButtonHover {
+  from {background-color: @btn-bg-color;}
+  to {background-color: white;}
+}
+
+
+@keyframes onButtonHover {
+  from {background-color: white;}
+  to {background-color: @btn-bg-color;}
+}
+
 // Mixins Here
+
+.custom-btn(@size, @bgcolor, @color, @bradius, @fontsize) {
+  background-color: @bgcolor;
+  color: @color;
+  padding: @size;
+  font-size: @fontsize;
+  border-radius: @bradius;
+  border: 1px solid @color;
+  text-align: center;
+  animation-name: onButtonHover;
+  animation-duration: .5s;
+}
+
+.custom-btn-hover(@color, @bg-color) {
+  color: @color;
+  background-color: @bg-color;
+  border: 1px solid @color;
+  animation-name: offButtonHover;
+  animation-duration: .5s;
+}
